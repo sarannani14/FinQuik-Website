@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinQuik | GST & Income Tax Filing Experts — All India</title>
+<meta name="description" content="FinQuik — Expert GST Registration, ITR Filing & Business Compliance for small businesses and professionals across India. Fast, affordable, 100% online.">
+<meta name="robots" content="index, follow">
+<style>
+/* ── FONTS (inline fallback - no network needed) ── */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans','Segoe UI',Arial,sans-serif;
+  background:#fff;
+  color:#0f1a13;
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+:root{
+  --g:#10b981;
+  --gd:#059669;
+  --g2:#0d9488;
+  --text:#0f1a13;
+  --t2:#374151;
+  --t3:#6b7280;
+  --surf:#f6faf7;
+  --bdr:rgba(0,0,0,.08);
+  --r:14px;
+  --rl:20px;
+  --rxl:28px;
+  --shg:0 8px 32px rgba(16,185,129,.2);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes gradMove{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes floatY2{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes blobMove{0%,100%{transform:translate(0,0)}33%{transform:translate(30px,-25px)}66%{transform:translate(-20px,15px)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SCROLL REVEAL — starts visible so nothing blank ── */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1);
+}
+.reveal.from-left{transform:translateX(-24px)}
+.reveal.from-right{transform:translateX(24px)}
+.reveal.active{opacity:1 !important;transform:translate(0,0) !important}
+
+/* Delay helpers */
+.d1{transition-delay:.06s}.d2{transition-delay:.13s}.d3{transition-delay:.20s}
+.d4{transition-delay:.27s}.d5{transition-delay:.34s}.d6{transition-delay:.41s}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+
+/* ── PILL TAG ── */
+.pill-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.7rem;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--gd);background:rgba(16,185,129,.08);
+  border:1px solid rgba(16,185,129,.22);
+  padding:5px 14px;border-radius:999px;margin-bottom:18px;
+}
+.pill-tag .dot{width:5px;height:5px;border-radius:50%;background:var(--g);flex-shrink:0}
+
+/* ── SECTION HEADINGS ── */
+.h2{
+  font-family:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
+  font-size:clamp(1.85rem,3.2vw,2.75rem);
+  font-weight:800;line-height:1.15;letter-spacing:-.02em;color:#0f1a13;
+}
+.h2 em{font-style:normal;color:var(--gd)}
+.sub{font-size:1rem;color:var(--t3);line-height:1.72;margin-top:12px}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'DM Sans','Segoe UI',Arial,sans-serif;
+  font-size:.9rem;font-weight:700;text-decoration:none;
+  padding:13px 24px;border-radius:var(--r);cursor:pointer;
+  transition:all .25s cubic-bezier(.16,1,.3,1);border:none;white-space:nowrap;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--g),var(--g2));
+  background-size:200%;color:#fff;
+  box-shadow:0 4px 20px rgba(16,185,129,.4);
+  animation:gradMove 5s ease infinite;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(16,185,129,.5)}
+.btn-wa{
+  background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.28);color:#15803d;
+}
+.btn-wa:hover{background:rgba(37,211,102,.18);transform:translateY(-2px)}
+
+/* ── NAV ── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:0;
+  transition:background .35s,box-shadow .35s;
+}
+#nav.scrolled{
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--bdr);
+  box-shadow:0 2px 18px rgba(0,0,0,.07);
+}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo-mark{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,var(--g),var(--g2));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 14px rgba(16,185,129,.38);
+}
+.logo-mark svg{width:18px;height:18px;fill:#fff}
+.logo-name{
+  font-family:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
+  font-size:1.2rem;font-weight:800;color:#0f1a13;letter-spacing:-.02em;
+}
+.logo-name span{color:var(--g)}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{
+  font-size:.875rem;font-weight:500;color:var(--t2);
+  padding:7px 14px;border-radius:8px;text-decoration:none;transition:all .2s;
+}
+.nav-links a:hover{color:var(--gd);background:rgba(16,185,129,.07)}
+.nav-cta{
+  display:inline-flex;align-items:center;padding:9px 20px;border-radius:10px;
+  background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);
+  color:var(--gd);font-size:.85rem;font-weight:700;text-decoration:none;
+  transition:all .22s;
+}
+.nav-cta:hover{background:rgba(16,185,129,.18);transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.burger span{display:block;width:22px;height:2px;background:var(--t2);border-radius:2px;transition:all .3s}
+
+@media(max-width:800px){
+  .burger{display:flex}
+  .nav-links{
+    position:fixed;top:66px;left:0;right:0;
+    flex-direction:column;align-items:stretch;
+    background:rgba(255,255,255,.98);border-bottom:1px solid var(--bdr);
+    padding:12px 20px 20px;gap:4px;
+    transform:translateY(-110%);opacity:0;
+    transition:all .32s cubic-bezier(.16,1,.3,1);pointer-events:none;
+  }
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:all}
+  .nav-links a,.nav-cta{padding:13px 16px;border-radius:var(--r);display:block}
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:130px 0 80px;position:relative;overflow:hidden;background:#fff;
+}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);z-index:0;pointer-events:none}
+.b1{width:680px;height:680px;background:radial-gradient(circle,rgba(16,185,129,.1) 0%,transparent 65%);top:-180px;right:-120px;animation:blobMove 14s ease-in-out infinite}
+.b2{width:480px;height:480px;background:radial-gradient(circle,rgba(13,148,136,.07) 0%,transparent 65%);bottom:-80px;left:-80px;animation:blobMove 18s ease-in-out infinite reverse}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:linear-gradient(rgba(16,185,129,.04) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(16,185,129,.04) 1px,transparent 1px);
+  background-size:52px 52px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 40%,black 30%,transparent 100%);
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 40%,black 30%,transparent 100%);
+}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center;position:relative;z-index:2}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2);
+  border-radius:999px;padding:6px 16px 6px 9px;
+  font-size:.75rem;font-weight:600;color:var(--gd);margin-bottom:24px;
+}
+.bdot{width:20px;height:20px;border-radius:50%;background:rgba(16,185,129,.15);display:flex;align-items:center;justify-content:center}
+.bdot::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--g);display:block;animation:pulse 2s infinite}
+.hero-h1{
+  font-family:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
+  font-size:clamp(2.3rem,4.8vw,3.8rem);
+  font-weight:800;line-height:1.1;letter-spacing:-.03em;color:#0f1a13;margin-bottom:20px;
+}
+.hero-h1 .grad{
+  background:linear-gradient(100deg,var(--gd),#16a34a,var(--g2));
+  background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;animation:gradMove 4s ease infinite;
+}
+.hero-sub{font-size:1.05rem;color:var(--t2);line-height:1.75;max-width:450px;margin-bottom:34px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:14px;padding-top:24px;border-top:1px solid rgba(0,0,0,.07)}
+.hero-pill{font-size:.79rem;color:var(--t3);font-weight:500}
+
+/* ── DASHBOARD CARD ── */
+.dash-card{
+  background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:var(--rxl);
+  overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.1),var(--shg);
+  position:relative;
+}
+.dash-bar{
+  display:flex;align-items:center;gap:12px;padding:14px 18px;
+  background:#f8fafb;border-bottom:1px solid rgba(0,0,0,.07);
+}
+.dbar-dots{display:flex;gap:6px}
+.dd{width:11px;height:11px;border-radius:50%}
+.dd-r{background:#ff5f57}.dd-y{background:#febc2e}.dd-g{background:#28c840}
+.dbar-label{font-size:.72rem;font-weight:600;color:var(--t3);background:rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.08);padding:4px 12px;border-radius:6px}
+.dash-body{padding:20px}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.kpi{background:var(--surf);border:1px solid rgba(16,185,129,.15);border-radius:12px;padding:14px 10px;text-align:center}
+.kpi-v{font-family:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;font-size:1.4rem;font-weight:800;color:var(--gd);display:block;line-height:1}
+.kpi-l{font-size:.6rem;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-top:4px}
+.rows{display:flex;flex-direction:column;gap:9px}
+.row{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#f8fafb;border:1px solid rgba(0,0,0,.07);border-radius:12px;transition:border-color .2s}
+.row:hover{border-color:rgba(16,185,129,.2)}
+.row-ic{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.ig{background:rgba(16,185,129,.12)}.ib{background:rgba(59,130,246,.12)}.ia{background:rgba(245,158,11,.12)}
+.row-name{font-size:.81rem;font-weight:600;color:var(--text)}
+.row-sub{font-size:.67rem;color:var(--t3)}
+.chip{margin-left:auto;font-size:.6rem;font-weight:700;padding:3px 10px;border-radius:999px;flex-shrink:0}
+.cg{background:rgba(16,185,129,.1);color:#059669;border:1px solid rgba(16,185,129,.2)}
+.cb{background:rgba(59,130,246,.1);color:#2563eb;border:1px solid rgba(59,130,246,.2)}
+.ca{background:rgba(245,158,11,.1);color:#b45309;border:1px solid rgba(245,158,11,.2)}
+
+/* Float badges */
+.fbadge{
+  position:absolute;background:#fff;border:1px solid rgba(0,0,0,.08);
+  border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:9px;
+  box-shadow:0 10px 28px rgba(0,0,0,.1);
+}
+.fb1{bottom:-20px;left:-32px;animation:floatY 4.5s ease-in-out infinite}
+.fb2{top:-16px;right:-24px;animation:floatY2 3.8s ease-in-out infinite}
+.fbic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px}
+.fbg{background:rgba(16,185,129,.12)}.fbb{background:rgba(99,102,241,.12)}
+.fb-t strong{font-size:.76rem;font-weight:700;color:var(--text);display:block}
+.fb-t span{font-size:.63rem;color:var(--t3)}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:50px}
+  .dash-wrap{max-width:480px;margin:0 auto}
+  .fb1,.fb2{display:none}
+}
+@media(max-width:480px){.hero{padding:110px 0 60px}.hero-h1{font-size:2.1rem}}
+
+/* ── MARQUEE STRIP ── */
+.strip{background:var(--surf);border-top:1px solid rgba(16,185,129,.12);border-bottom:1px solid rgba(16,185,129,.12);padding:16px 0;overflow:hidden}
+.strip-track{display:flex;gap:44px;width:max-content;animation:marquee 26s linear infinite}
+.si{display:flex;align-items:center;gap:8px;font-size:.77rem;font-weight:600;color:var(--t3);white-space:nowrap}
+.si .ic{color:var(--g);font-size:14px}
+
+/* ── SERVICES ── */
+.services{padding:100px 0;background:#fff;position:relative;overflow:hidden}
+.services::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:860px;height:860px;border-radius:50%;
+  background:radial-gradient(circle,rgba(16,185,129,.03) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.section-head{text-align:center;margin-bottom:60px}
+.section-head .sub{margin:12px auto 0;max-width:500px}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
+.srv-card{
+  background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:var(--rl);
+  padding:28px 24px;position:relative;overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s,box-shadow .3s;
+}
+.srv-card::before{
+  content:'';position:absolute;inset:0;border-radius:var(--rl);
+  background:linear-gradient(135deg,rgba(16,185,129,.05),transparent 60%);
+  opacity:0;transition:opacity .3s;
+}
+.srv-card:hover{transform:translateY(-6px);border-color:rgba(16,185,129,.22);box-shadow:0 20px 50px rgba(0,0,0,.09)}
+.srv-card:hover::before{opacity:1}
+.srv-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.srv-ic{
+  width:48px;height:48px;border-radius:12px;font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.15);
+  transition:all .28s;
+}
+.srv-card:hover .srv-ic{background:rgba(16,185,129,.15);transform:scale(1.06)}
+.srv-num{font-size:.66rem;font-weight:700;color:var(--t3);background:rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.08);padding:3px 8px;border-radius:6px;letter-spacing:.8px}
+.srv-name{font-family:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:9px}
+.srv-desc{font-size:.845rem;color:var(--t3);line-height:1.67}
+.srv-rule{height:1px;background:rgba(0,0,0,.07);margin:16px 0;transition:background .28s}
+.srv-card:hover .srv-rule{background:rgba(16,185,129,.2)}
+.srv-link{display:flex;align-items:center;gap:6px;font-size:.77rem;font-weight:700;color:var(--gd);transition:gap .22s}
+.srv-card:hover .srv-link{gap:10px}
+@media(max-width:960px){.srv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.srv-grid{grid-template-columns:1fr}}
+
+/* ── WHY US ── */
+.why{padding:100px 0;background:var(--surf)}
+.why-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.why-lhs .sub{color:var(--t2);margin-bottom:36px}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.met{
+  background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:var(--r);
+  padding:18px 14px;text-align:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);transition:all .25s;
+}
+.met:hover{border-color:rgba(16,185,129,.25);box-shadow:var(--shg);transform:translateY(-3px)}
+.met-v{font-family:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;font-size:1.85rem;font-weight:800;color:var(--gd);line-height:1;display:block}
+.met-l{font-size:.64rem;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.7px;margin-top:5px}
+.feats{display:flex;flex-direction:column;gap:12px}
+.feat{
+  display:flex;gap:16px;align-items:flex-start;
+  background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:var(--rl);
+  padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.04);
+  position:relative;overflow:hidden;
+  transition:transform .28s cubic-bezier(.16,1,.3,1),border-color .28s,box-shadow .28s;
+}
+.feat::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--g),var(--g2));
+  transform:scaleY(0);transform-origin:top;transition:transform .3s;
+}
+.feat:hover{transform:translateX(6px);border-color:rgba(16,185,129,.2);box-shadow:0 8px 28px rgba(0,0,0,.07)}
+.feat:hover::before{transform:scaleY(1)}
+.feat-ic{
+  width:44px;height:44px;border-radius:11px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:19px;
+  background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.14);
+  transition:background .25s;
+}
+.feat:hover .feat-ic{background:rgba(16,185,129,.15)}
+.feat-t{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:3px}
+.feat-d{font-size:.82rem;color:var(--t3);line-height:1.6}
+@media(max-width:900px){.why-inner{grid-template-columns:1fr;gap:52px}}
+
+/* ── CTA BAND ── */
+.cta-band{
+  padding:96px 0;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#064e3b,#047857,#059669);
+}
+.cta-band::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+.cta-inner{text-align:center;position:relative;z-index:2}
+.cta-inner .h2{color:#fff;margin-bottom:12px}
+.cta-inner .h2 em{color:#a7f3d0}
+.cta-inner .sub{color:rgba(255,255,255,.78);margin:0 auto 40px;max-width:480px}
+.cta-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+
+/* ── THE PROFESSIONAL CTA BUTTONS ── */
+.cta-btn-white{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 34px;border-radius:14px;
+  background:#fff;color:#064e3b;
+  font-family:'DM Sans','Segoe UI',Arial,sans-serif;
+  font-size:1rem;font-weight:800;text-decoration:none;
+  box-shadow:0 8px 28px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.9);
+  border:2px solid transparent;
+  transition:all .26s cubic-bezier(.16,1,.3,1);
+}
+.cta-btn-white:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 44px rgba(0,0,0,.22);background:#f0fdf4}
+
+.cta-btn-outline{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 34px;border-radius:14px;
+  background:rgba(255,255,255,.12);
+  border:2px solid rgba(255,255,255,.52);
+  color:#fff;
+  font-family:'DM Sans','Segoe UI',Arial,sans-serif;
+  font-size:1rem;font-weight:800;text-decoration:none;
+  backdrop-filter:blur(8px);
+  box-shadow:0 4px 18px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.1);
+  transition:all .26s cubic-bezier(.16,1,.3,1);
+}
+.cta-btn-outline:hover{background:rgba(255,255,255,.24);border-color:rgba(255,255,255,.85);transform:translateY(-3px) scale(1.02)}
+
+/* ── CONTACT ── */
+.contact{padding:100px 0;background:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:start}
+.contact-lhs .sub{color:var(--t2);margin:12px 0 32px}
+.ccard{
+  display:flex;align-items:center;gap:15px;
+  background:var(--surf);border:1px solid rgba(0,0,0,.08);
+  border-radius:var(--r);padding:16px 18px;margin-bottom:10px;
+  text-decoration:none;transition:all .25s;
+}
+.ccard:hover{border-color:rgba(16,185,129,.25);box-shadow:var(--shg);transform:translateX(5px)}
+.cic{
+  width:40px;height:40px;border-radius:10px;flex-shrink:0;
+  background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.15);
+  display:flex;align-items:center;justify-content:center;font-size:17px;
+}
+.clbl{font-size:.67rem;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.6px}
+.cval{font-size:.92rem;font-weight:600;color:var(--text)}
+.form-box{
+  background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:var(--rxl);
+  padding:42px 38px;box-shadow:0 14px 48px rgba(0,0,0,.08);
+  position:relative;overflow:hidden;
+}
+.form-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--g),var(--g2),transparent)}
+.form-box h3{font-family:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;font-size:1.35rem;font-weight:800;color:var(--text);margin-bottom:5px}
+.form-box p{font-size:.875rem;color:var(--t3);margin-bottom:28px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:.74rem;font-weight:700;color:var(--t2);margin-bottom:6px;letter-spacing:.3px}
+.fg input,.fg select,.fg textarea{
+  width:100%;padding:11px 14px;
+  background:var(--surf);border:1.5px solid rgba(0,0,0,.09);
+  border-radius:var(--r);color:var(--text);
+  font-family:'DM Sans','Segoe UI',Arial,sans-serif;font-size:.9rem;outline:none;
+  transition:border-color .22s,box-shadow .22s;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:#9ca3af}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(16,185,129,.45);background:#fff;box-shadow:0 0 0 3px rgba(16,185,129,.1)}
+.fg select{cursor:pointer}
+.fg select option{background:#fff;color:#0f1a13}
+.fg textarea{resize:vertical;min-height:108px}
+.btn-submit{
+  width:100%;padding:14px;border-radius:var(--r);border:none;
+  background:linear-gradient(135deg,var(--g),var(--g2));
+  background-size:200%;animation:gradMove 5s ease infinite;
+  color:#fff;font-family:'DM Sans','Segoe UI',Arial,sans-serif;
+  font-size:.96rem;font-weight:800;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  box-shadow:0 6px 24px rgba(16,185,129,.35);
+  transition:transform .25s,box-shadow .25s;
+}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(16,185,129,.5)}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.f2{grid-template-columns:1fr}.form-box{padding:26px 20px}}
+
+/* ── FOOTER ── */
+footer{background:#0f1a13;border-top:1px solid rgba(255,255,255,.06);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:28px}
+.fb .logo-name{color:#fff}
+.fb .logo-name span{color:#34d399}
+.fb p{font-size:.84rem;color:rgba(255,255,255,.38);line-height:1.72;max-width:250px;margin-top:14px}
+.fc h5{font-size:.67rem;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:1.4px;margin-bottom:16px}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fc ul a{font-size:.84rem;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:6px}
+.fc ul a:hover{color:#34d399}
+.footer-btm{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.77rem;color:rgba(255,255,255,.3)}
+.fbadge2{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.2);color:#6ee7b7;padding:4px 13px;border-radius:999px;font-size:.69rem;font-weight:700}
+@media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}.fb{grid-column:span 2}}
+@media(max-width:460px){.footer-grid{grid-template-columns:1fr}.fb{grid-column:unset}}
+
+/* ── WA FLOAT ── */
+.wa-fab{
+  position:fixed;bottom:24px;right:24px;z-index:990;
+  width:52px;height:52px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;box-shadow:0 6px 22px rgba(37,211,102,.45);
+  animation:floatY 3.5s ease-in-out infinite;
+  transition:transform .25s,box-shadow .25s,animation-duration .25s;
+}
+.wa-fab:hover{transform:scale(1.12);box-shadow:0 12px 38px rgba(37,211,102,.6);animation:none}
+.wa-fab svg{width:26px;height:26px;fill:#fff}
+.wa-tip{
+  position:absolute;right:62px;background:#0f1a13;border:1px solid rgba(255,255,255,.1);
+  color:#fff;font-family:'DM Sans','Segoe UI',Arial,sans-serif;
+  font-size:.71rem;font-weight:600;padding:5px 11px;border-radius:8px;
+  white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;
+  box-shadow:0 6px 20px rgba(0,0,0,.15);
+}
+.wa-fab:hover .wa-tip{opacity:1}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-bar">
+      <a href="#" class="logo">
+        <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <span class="logo-name">Fin<span>Quik</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Free Consultation →</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+
+      <!-- Left text -->
+      <div>
+        <div class="hero-badge">
+          <div class="bdot"></div>
+          🇮🇳 All India &middot; 100% Remote &middot; Trusted Experts
+        </div>
+        <h1 class="hero-h1">
+          Stress-Free<br>
+          <span class="grad">GST &amp; Income Tax</span><br>
+          Filing &mdash; Done Right
+        </h1>
+        <p class="hero-sub">Expert GST Registration, ITR Filing &amp; Business Compliance for small businesses &amp; professionals. Fast, affordable, completely online.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-primary">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Get Free Consultation
+          </a>
+          <a href="https://wa.me/919985143515" target="_blank" class="btn btn-wa">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.17 9.17 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374A9.86 9.86 0 012.18 11.89c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Now
+          </a>
+        </div>
+        <div class="hero-pills">
+          <span class="hero-pill">✅ 100% Online</span>
+          <span class="hero-pill">⚡ 24-hr Turnaround</span>
+          <span class="hero-pill">🇮🇳 Pan India</span>
+          <span class="hero-pill">🔒 Zero Penalties</span>
+        </div>
+      </div>
+
+      <!-- Right dashboard -->
+      <div class="dash-wrap">
+        <div class="fbadge fb2">
+          <div class="fbic fbb">📋</div>
+          <div class="fb-t"><strong>ITR-3 Submitted</strong><span>AY 2024–25 · Filed</span></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-bar">
+            <div class="dbar-dots"><div class="dd dd-r"></div><div class="dd dd-y"></div><div class="dd dd-g"></div></div>
+            <div class="dbar-label">FinQuik Dashboard</div>
+          </div>
+          <div class="dash-body">
+            <div class="kpi-row">
+              <div class="kpi"><span class="kpi-v">100%</span><div class="kpi-l">Online</div></div>
+              <div class="kpi"><span class="kpi-v">24hr</span><div class="kpi-l">Turnaround</div></div>
+              <div class="kpi"><span class="kpi-v">₹0</span><div class="kpi-l">Penalties</div></div>
+            </div>
+            <div class="rows">
+              <div class="row"><div class="row-ic ig">📄</div><div><div class="row-name">GSTR-3B Filed</div><div class="row-sub">This Month · On Time</div></div><div class="chip cg">✓ Done</div></div>
+              <div class="row"><div class="row-ic ib">🏢</div><div><div class="row-name">GST Registration</div><div class="row-sub">GSTIN Issued · 2 Days</div></div><div class="chip cb">Active</div></div>
+              <div class="row"><div class="row-ic ia">⚡</div><div><div class="row-name">MSME Udyam Cert.</div><div class="row-sub">Processing · 1 Day Left</div></div><div class="chip ca">Soon</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="fbadge fb1">
+          <div class="fbic fbg">✅</div>
+          <div class="fb-t"><strong>GST Registered</strong><span>GSTIN issued today</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE STRIP ── -->
+<div class="strip">
+  <div class="strip-track">
+    <span class="si"><span class="ic">⚡</span>GST Registration</span>
+    <span class="si"><span class="ic">📊</span>GSTR-1 &amp; GSTR-3B Filing</span>
+    <span class="si"><span class="ic">🧾</span>Income Tax — ITR-1 to ITR-4</span>
+    <span class="si"><span class="ic">🏭</span>MSME / Udyam Registration</span>
+    <span class="si"><span class="ic">🏢</span>Business Incorporation</span>
+    <span class="si"><span class="ic">📒</span>Accounting &amp; Bookkeeping</span>
+    <span class="si"><span class="ic">🌏</span>All India — 100% Remote</span>
+    <span class="si"><span class="ic">🔒</span>Zero Penalties Guaranteed</span>
+    <span class="si"><span class="ic">⚡</span>GST Registration</span>
+    <span class="si"><span class="ic">📊</span>GSTR-1 &amp; GSTR-3B Filing</span>
+    <span class="si"><span class="ic">🧾</span>Income Tax — ITR-1 to ITR-4</span>
+    <span class="si"><span class="ic">🏭</span>MSME / Udyam Registration</span>
+    <span class="si"><span class="ic">🏢</span>Business Incorporation</span>
+    <span class="si"><span class="ic">📒</span>Accounting &amp; Bookkeeping</span>
+    <span class="si"><span class="ic">🌏</span>All India — 100% Remote</span>
+    <span class="si"><span class="ic">🔒</span>Zero Penalties Guaranteed</span>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="pill-tag"><span class="dot"></span>What We Do</div>
+      <h2 class="h2">Complete <em>Tax &amp; Compliance</em> Services</h2>
+      <p class="sub">From registration to annual filings — we handle the entire compliance lifecycle so you focus on growing your business.</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card reveal d1">
+        <div class="srv-top"><div class="srv-ic">📋</div><span class="srv-num">01</span></div>
+        <div class="srv-name">GST Registration</div>
+        <p class="srv-desc">Complete GSTIN application — document prep, portal submission, ARN tracking, and certificate delivery. End-to-end in days.</p>
+        <div class="srv-rule"></div>
+        <div class="srv-link">Get started <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="srv-card reveal d2">
+        <div class="srv-top"><div class="srv-ic">📊</div><span class="srv-num">02</span></div>
+        <div class="srv-name">GST Return Filing</div>
+        <p class="srv-desc">Timely, accurate filing of GSTR-1, GSTR-3B &amp; Annual GSTR-9. Proactive deadline management — never pay a late fee again.</p>
+        <div class="srv-rule"></div>
+        <div class="srv-link">Get started <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="srv-card reveal d3">
+        <div class="srv-top"><div class="srv-ic">🧾</div><span class="srv-num">03</span></div>
+        <div class="srv-name">Income Tax Filing</div>
+        <p class="srv-desc">Expert ITR-1 to ITR-4 filing for individuals, freelancers &amp; businesses. Maximize deductions, minimize tax — zero stress.</p>
+        <div class="srv-rule"></div>
+        <div class="srv-link">Get started <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="srv-card reveal d4">
+        <div class="srv-top"><div class="srv-ic">🏭</div><span class="srv-num">04</span></div>
+        <div class="srv-name">MSME Registration</div>
+        <p class="srv-desc">Udyam Portal registration to unlock government subsidies, priority lending, and protection under the MSMED Act.</p>
+        <div class="srv-rule"></div>
+        <div class="srv-link">Get started <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="srv-card reveal d5">
+        <div class="srv-top"><div class="srv-ic">🏢</div><span class="srv-num">05</span></div>
+        <div class="srv-name">Business Incorporation</div>
+        <p class="srv-desc">Incorporate your Private Limited Company, LLP, or OPC with complete MCA compliance. Idea to registered in days.</p>
+        <div class="srv-rule"></div>
+        <div class="srv-link">Get started <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="srv-card reveal d6">
+        <div class="srv-top"><div class="srv-ic">📒</div><span class="srv-num">06</span></div>
+        <div class="srv-name">Accounting &amp; Bookkeeping</div>
+        <p class="srv-desc">Monthly bookkeeping, P&amp;L statements, and balance sheets on schedule. Clean financials for smarter decisions.</p>
+        <div class="srv-rule"></div>
+        <div class="srv-link">Get started <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="why-inner">
+      <div class="why-lhs reveal from-left">
+        <div class="pill-tag"><span class="dot"></span>Why FinQuik</div>
+        <h2 class="h2">Built for Real<br><em>Indian Businesses</em></h2>
+        <p class="sub">We serve shop owners, freelancers, startups &amp; retailers who need professional tax help — without enterprise-level costs.</p>
+        <div class="metrics">
+          <div class="met"><span class="met-v">100%</span><div class="met-l">Online</div></div>
+          <div class="met"><span class="met-v">24hr</span><div class="met-l">Turnaround</div></div>
+          <div class="met"><span class="met-v">₹0</span><div class="met-l">Penalties</div></div>
+        </div>
+      </div>
+      <div class="feats reveal from-right">
+        <div class="feat d1">
+          <div class="feat-ic">💰</div>
+          <div><div class="feat-t">Affordable, Transparent Pricing</div><div class="feat-d">Flat-fee packages — no surprises, no hidden charges. Designed for small businesses, retailers, and solopreneurs.</div></div>
+        </div>
+        <div class="feat d2">
+          <div class="feat-ic">💻</div>
+          <div><div class="feat-t">100% Online Process</div><div class="feat-d">No office visits, ever. Share documents via WhatsApp or email — everything handled digitally, fast and secure.</div></div>
+        </div>
+        <div class="feat d3">
+          <div class="feat-ic">🌏</div>
+          <div><div class="feat-t">All India Service Coverage</div><div class="feat-d">From Srinagar to Kanyakumari — we serve clients across every state with the same quality, care, and speed.</div></div>
+        </div>
+        <div class="feat d4">
+          <div class="feat-ic">🤝</div>
+          <div><div class="feat-t">Dedicated Human Support</div><div class="feat-d">Direct WhatsApp access to your consultant. Real answers from real people — no bots, no hold queues.</div></div>
+        </div>
+        <div class="feat d5">
+          <div class="feat-ic">⚡</div>
+          <div><div class="feat-t">Lightning-Fast Turnaround</div><div class="feat-d">Most registrations and filings completed within 24 hours of receiving your documents. Speed without compromise.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ── -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <div class="pill-tag" style="color:#a7f3d0;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);margin-bottom:20px">
+        <span class="dot" style="background:#a7f3d0"></span>Get Started Today
+      </div>
+      <h2 class="h2">Ready to Simplify Your<br><em>Tax Compliance?</em></h2>
+      <p class="sub">Join businesses across India who file stress-free with FinQuik. Book your free consultation — no commitment, no cost.</p>
+      <div class="cta-btns">
+        <a href="#contact" class="cta-btn-white">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M8 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>
+          Book Free Consultation
+        </a>
+        <a href="https://wa.me/919985143515" target="_blank" class="cta-btn-outline">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.17 9.17 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374A9.86 9.86 0 012.18 11.89c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal from-left">
+        <div class="pill-tag"><span class="dot"></span>Contact Us</div>
+        <h2 class="h2">Let's Get Your<br>Taxes <em>Sorted</em></h2>
+        <p class="sub" style="color:#374151;margin:12px 0 32px">Fill the form and we'll respond within a few hours. Or reach out directly on WhatsApp.</p>
+        <a href="tel:+919985143515" class="ccard">
+          <div class="cic">📞</div>
+          <div><div class="clbl">Call / WhatsApp</div><div class="cval">+91 99851 43515</div></div>
+        </a>
+        <a href="mailto:lankasaran@yahoo.com" class="ccard">
+          <div class="cic">✉️</div>
+          <div><div class="clbl">Email</div><div class="cval">lankasaran@yahoo.com</div></div>
+        </a>
+        <div class="ccard" style="cursor:default">
+          <div class="cic">🌏</div>
+          <div><div class="clbl">Service Area</div><div class="cval">All Over India · Remote</div></div>
+        </div>
+        <a href="https://wa.me/919985143515" target="_blank" class="btn btn-wa" style="margin-top:10px">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.17 9.17 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374A9.86 9.86 0 012.18 11.89c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us Now
+        </a>
+      </div>
+      <div class="form-box reveal from-right">
+        <h3>Book Free Consultation</h3>
+        <p>We typically respond within hours — often much sooner.</p>
+        <form action="https://formsubmit.co/lankasaran@yahoo.com" method="POST">
+          <input type="hidden" name="_subject" value="New Lead — FinQuik Website">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <div class="f2">
+            <div class="fg">
+              <label for="fn">Full Name *</label>
+              <input type="text" id="fn" name="Full Name" placeholder="Rahul Sharma" required>
+            </div>
+            <div class="fg">
+              <label for="fp">Phone *</label>
+              <input type="tel" id="fp" name="Phone" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="fe">Email</label>
+            <input type="email" id="fe" name="Email" placeholder="rahul@example.com">
+          </div>
+          <div class="fg">
+            <label for="fs">Service Required *</label>
+            <select id="fs" name="Service Required" required>
+              <option value="" disabled selected>Select a service…</option>
+              <option>GST Registration</option>
+              <option>GST Return Filing (GSTR-1 / GSTR-3B)</option>
+              <option>Annual GST Return (GSTR-9)</option>
+              <option>Income Tax Filing — ITR-1</option>
+              <option>Income Tax Filing — ITR-3 / ITR-4</option>
+              <option>MSME / Udyam Registration</option>
+              <option>Business Incorporation (Pvt Ltd / LLP)</option>
+              <option>Accounting &amp; Bookkeeping</option>
+              <option>Multiple / Not Sure Yet</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="fm">Message</label>
+            <textarea id="fm" name="Message" placeholder="Tell us about your business and what help you need…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send My Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="fb">
+        <a href="#" class="logo">
+          <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <span class="logo-name">Fin<span>Quik</span></span>
+        </a>
+        <p>Professional tax consultancy helping small businesses, retailers, freelancers &amp; startups across India stay compliant — easily and affordably.</p>
+      </div>
+      <div class="fc">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">GST Registration</a></li>
+          <li><a href="#services">GST Return Filing</a></li>
+          <li><a href="#services">Income Tax (ITR)</a></li>
+          <li><a href="#services">MSME Registration</a></li>
+          <li><a href="#services">Business Incorporation</a></li>
+          <li><a href="#services">Accounting &amp; Bookkeeping</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+919985143515">📞 +91 99851 43515</a></li>
+          <li><a href="mailto:lankasaran@yahoo.com">✉️ lankasaran@yahoo.com</a></li>
+          <li><a href="https://wa.me/919985143515" target="_blank">💬 WhatsApp Us</a></li>
+          <li><a href="#contact">📋 Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-btm">
+      <span>© 2026 FinQuik Tax Compliance. All rights reserved.</span>
+      <span class="fbadge2">📍 Serving Clients Across India</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ── WA FLOAT ── -->
+<a href="https://wa.me/919985143515" target="_blank" class="wa-fab" aria-label="WhatsApp FinQuik">
+  <span class="wa-tip">Chat with FinQuik</span>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.17 9.17 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374A9.86 9.86 0 012.18 11.89c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Navbar scroll
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 10) { nav.classList.add('scrolled'); }
+  else { nav.classList.remove('scrolled'); }
+}, { passive: true });
+
+// Mobile menu
+var burger = document.getElementById('burger');
+var navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', function() {
+  navLinks.classList.toggle('open');
+});
+var links = navLinks.querySelectorAll('a');
+for (var i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', function() { navLinks.classList.remove('open'); });
+}
+
+// Scroll reveal — safe version with fallback
+function revealAll() {
+  var els = document.querySelectorAll('.reveal');
+  for (var i = 0; i < els.length; i++) {
+    els[i].classList.add('active');
+  }
+}
+
+if ('IntersectionObserver' in window) {
+  var obs = new IntersectionObserver(function(entries) {
+    for (var j = 0; j < entries.length; j++) {
+      if (entries[j].isIntersecting) {
+        entries[j].target.classList.add('active');
+        obs.unobserve(entries[j].target);
+      }
+    }
+  }, { threshold: 0.08 });
+  var revEls = document.querySelectorAll('.reveal');
+  for (var k = 0; k < revEls.length; k++) {
+    obs.observe(revEls[k]);
+  }
+  // Safety fallback — reveal all after 1.5s if still hidden
+  setTimeout(revealAll, 1500);
+} else {
+  // No IntersectionObserver support — show everything immediately
+  revealAll();
+}
+</script>
+</body>
+</html>
